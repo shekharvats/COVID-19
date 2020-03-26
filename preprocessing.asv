@@ -1,0 +1,20 @@
+clear;
+clc;
+close all;
+
+T=readtable('time_series_covid19_confirmed_global.csv');
+
+for i=5:size(T,2)
+    US(i) = str2num(cell2mat(T{227,i}));
+    
+end
+
+for i=5:size(T,2)
+    for j = 51:83
+    china_tmp(i,j) = str2num(cell2mat(T{j,i}));
+    end
+end
+
+china_total = sum(chine_tmp(
+
+plot(US);
