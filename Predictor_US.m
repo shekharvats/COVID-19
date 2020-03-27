@@ -34,12 +34,12 @@ xlabel('Time (Days)'); ylabel('Number of Confirmed Deaths (-)');
 title('Covid 19 number of deaths projected (March 26 2020)');
 
 %% recovery prediction
-% % % figure;
-% % % plot(time2,y3,'--o','LineWidth',2); hold on; grid on;
-% % % plot(time,US_recovery,'*');
-% % % legend('US Projected','US present','Location','best');
-% % % set(gca,'FontSize',12); set(gca,'FontWeight','bold');
-% % % xlabel('Time (Days)'); ylabel('Number of Confirmed Recovery (-)');
-% % % title('Covid 19 number of recovery projected (March 26 2020)');
+figure;
+plot(time2,y3,'--o','LineWidth',2); hold on; grid on;
+plot(time(2:end),US_recovery,'*');
+legend('US Projected','US present','Location','best');
+set(gca,'FontSize',12); set(gca,'FontWeight','bold');
+xlabel('Time (Days)'); ylabel('Number of Confirmed Recovery (-)');
+title('Covid 19 number of recovery projected (March 26 2020)');
 
 

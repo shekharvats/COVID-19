@@ -8,30 +8,30 @@ T3=readtable('time_series_covid19_recovered_global.csv');
 %% cases
 time =1:1:size(T,2); 
 for i=5:size(T,2)
-    US(i) = cell2mat(table2cell(T(227,i)));
-    Italy(i) = cell2mat(table2cell(T(139,i)));
-    Spain(i) = cell2mat(table2cell(T(203,i)));
-    India(i) = cell2mat(table2cell(T(133,i)));
+    US(i) = str2num(cell2mat(table2cell(T(227,i))));
+    Italy(i) = str2num(cell2mat(table2cell(T(139,i))));
+    Spain(i) = str2num(cell2mat(table2cell(T(203,i))));
+    India(i) = str2num(cell2mat(table2cell(T(133,i))));
 end
 
 for i=5:size(T,2)
     for j = 51:83 % taking into account all the provinces in China
-    china_tmp(i,j) = cell2mat(table2cell(T(j,i)));
+    china_tmp(i,j) = str2num(cell2mat(table2cell(T(j,i))));
     end
 end
 china_total = sum(china_tmp,2);
 
 %% deaths
 for i=5:size(T1,2) 
-    US_deaths(i) = cell2mat(table2cell(T1(227,i)));
-    italy_deaths(i) = cell2mat(table2cell(T1(139,i)));
-    spain_deaths(i) = cell2mat(table2cell(T1(203,i)));
-    India_deaths(i) = cell2mat(table2cell(T1(133,i)));
+    US_deaths(i) = str2num(cell2mat(table2cell(T1(227,i))));
+    italy_deaths(i) = str2num(cell2mat(table2cell(T1(139,i))));
+    spain_deaths(i) = str2num(cell2mat(table2cell(T1(203,i))));
+    India_deaths(i) = str2num(cell2mat(table2cell(T1(133,i))));
 end
 
 for i=5:size(T1,2) % comparison against China with all the provinces
     for j = 51:83 % taking into account all the provinces in China
-    china_tmp_deaths(i,j) = cell2mat(table2cell(T1(j,i)));
+    china_tmp_deaths(i,j) = str2num(cell2mat(table2cell(T1(j,i))));
     end
 end
 
@@ -39,15 +39,15 @@ china_total_deaths = sum(china_tmp_deaths,2);
 
 %% recovery
 for i=5:size(T3,2) 
-    US_recovery(i) = cell2mat(table2cell(T3(227,i)));
-    italy_recovery(i) = cell2mat(table2cell(T3(133,i)));
-    spain_recovery(i) = cell2mat(table2cell(T3(201,i)));
-    India_recovery(i) = cell2mat(table2cell(T3(127,i)));
+    US_recovery(i) = str2num(cell2mat(table2cell(T3(227,i))));
+    italy_recovery(i) = str2num(cell2mat(table2cell(T3(133,i))));
+    spain_recovery(i) = str2num(cell2mat(table2cell(T3(201,i))));
+    India_recovery(i) = str2num(cell2mat(table2cell(T3(127,i))));
 end
 
 for i=5:size(T3,2)
     for j = 42:74 % taking into account all the provinces in China
-    china_tmp_recovery(i,j) = cell2mat(table2cell(T3(j,i)));
+    china_tmp_recovery(i,j) = str2num(cell2mat(table2cell(T3(j,i))));
     end
 end
 
