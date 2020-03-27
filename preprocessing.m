@@ -7,27 +7,27 @@ T1=readtable('time_series_covid19_deaths_global.csv');
 
 time =1:1:size(T,2);
 for i=5:size(T,2)
-    US(i) = str2num(cell2mat(T{227,i}));
-    italy(i) = str2num(cell2mat(T{139,i}));
-    spain(i) = str2num(cell2mat(T{203,i}));
+    US(i) = cell2mat(table2cell(T(227,i)));
+    italy(i) = cell2mat(table2cell(T(139,i)))
+    spain(i) = cell2mat(table2cell(T(203,i)))
 end
 
 for i=5:size(T,2)
     for j = 51:83
-    china_tmp(i,j) = str2num(cell2mat(T{j,i}));
+    china_tmp(i,j) = cell2mat(table2cell(T(j,i)));
     end
 end
 
 
 for i=5:size(T,2)
-    US_deaths(i) = str2num(cell2mat(T1{227,i}));
-    italy_deaths(i) = str2num(cell2mat(T1{139,i}));
-    spain_deaths(i) = str2num(cell2mat(T1{203,i}));
+    US_deaths(i) = cell2mat(table2cell(T(227,i)));
+    italy_deaths(i) = cell2mat(table2cell(T(139,i)));
+    spain_deaths(i) = cell2mat(table2cell(T(203,i)));
 end
 
 for i=5:size(T,2)
     for j = 51:83
-    china_tmp_deaths(i,j) = str2num(cell2mat(T1{j,i}));
+    china_tmp_deaths(i,j) = cell2mat(table2cell(T(j,i)));
     end
 end
 
